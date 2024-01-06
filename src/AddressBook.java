@@ -16,6 +16,9 @@ public class AddressBook {
             insert.setString(5,c.number_type);
             insert.executeUpdate();
         }
+        catch(SQLIntegrityConstraintViolationException e){
+            JOptionPane.showMessageDialog(null,"Record already exists");
+        }
         catch (Exception insertException){
             insertException.printStackTrace();
         }
